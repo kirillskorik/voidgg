@@ -9,8 +9,8 @@ jobs:
   deploy:
     runs-on: self-hosted
     strategy:
-    matrix:
-      node-version: [18.x]
+      matrix:
+        node-version: [18.x]
 
     steps:
         - name: Checkout repository
