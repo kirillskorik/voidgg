@@ -1,0 +1,1 @@
+export const DEFAULT_URL = 'api.riotgames.com'

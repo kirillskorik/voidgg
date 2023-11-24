@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    volumes:
+      - /app
+      - /app/node_modules
+    environment:
+      - DATABASE_URL=postgresql://localhost:1111@:postgres:5432/postgres?schema=public
+  postgres:
+    container_name: postgres
+    image: postgres:15.3-alpine3.17
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1111
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
