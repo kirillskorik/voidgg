@@ -14,7 +14,7 @@ services:
       - /app
       - /app/node_modules
     environment:
-      - DATABASE_URL=postgresql://localhost:1111@:postgres:5432/postgres?schema=public
+      - DATABASE_URL=postgresql://localhost:1111@postgres:5432/postgres?schema=public
   postgres:
     container_name: postgres
     image: postgres:15.3-alpine3.17

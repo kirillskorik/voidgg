@@ -2,7 +2,7 @@ FROM node:18-alpine3.17
 
 WORKDIR /app
 
-EXPOSE 4200
+EXPOSE 80
 
 # Set npm version (can be removed if using the default npm version from the Node.js image)
 RUN npm install -g npm@latest
